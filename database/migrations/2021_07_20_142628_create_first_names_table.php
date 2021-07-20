@@ -15,7 +15,7 @@ class CreateFirstNamesTable extends Migration
     {
         Schema::create('first_names', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('first_name');
         });
     }
 

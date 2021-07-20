@@ -9,6 +9,8 @@ class Person extends Model
 {
     use HasFactory;
 
+    public $fillable = ['first_name_id','last_name_id','music_id'];
+
     public $timestamps = false;
 
     public function firstName() {

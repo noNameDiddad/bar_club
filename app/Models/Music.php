@@ -9,6 +9,8 @@ class Music extends Model
 {
     use HasFactory;
 
+    public $fillable = ['music'];
+
     public $timestamps = false;
 
     public function people()

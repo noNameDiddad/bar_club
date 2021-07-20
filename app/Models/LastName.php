@@ -9,6 +9,8 @@ class LastName extends Model
 {
     use HasFactory;
 
+    public $fillable = ['last_name'];
+
     public $timestamps = false;
 
     public function people()

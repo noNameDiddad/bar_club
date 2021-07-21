@@ -14,7 +14,7 @@
 <body>
 <div class="block-menu">
     <a href="/emulator"><p>START</p></a>
-    <a href="/emulator"><p>SETTINGS</p></a>
+    <a href="{{ route('open_settings') }}"><p>SETTINGS</p></a>
 </div>
 <div class="rights">
     <p>© all rights reserved</p>

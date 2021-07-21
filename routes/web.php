@@ -26,7 +26,7 @@ Route::get('/settings', [GeneralController::class, 'outputSettings'])->name('ope
 Route::get('/emulator', [GeneralController::class, 'startEmulator'])->name('open_emulator');
 Route::get('/exit', [GeneralController::class, 'exit'])->name('exit');
 Route::get('/exit_and_delete', [GeneralController::class, 'exit_and_delete'])->name('exit_and_delete');
-Route::get('/get_data', [GeneralController::class, 'getData']);
+Route::post('/get_data', [GeneralController::class, 'getData']);
 Route::get('/get_person', [GeneralController::class, 'getPersons'])->name('getPersons');
 
 Route::resource('/firstname', FirstNameController::class);

@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+p {
+    color: white;
+}
+
 body {
     background: #000;
     width: 100%;
@@ -35,6 +39,9 @@ body {
     color: #4a5568;
 }
 .dance {
+    color: #4a5568;
+}
+.face_control {
     color: #4a5568;
 }
 .exit {

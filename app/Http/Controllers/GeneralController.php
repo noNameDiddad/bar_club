@@ -31,7 +31,7 @@ class GeneralController extends Controller
     public function getPersons(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'count' => 'required|digits_between:0,30',
+            'count' => 'required|digits_between:0,15',
         ]);
 
         if ($validator->fails()) {

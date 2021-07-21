@@ -29,20 +29,20 @@
         <button type="submit"> Подтвердить </button>
     </form>
     @else
-        <p>Количество людей {{ session()->get('person') }}</p>
-        <script>
-            tracks = {!! json_encode($tracks) !!};
-            persons = {!! json_encode($persons) !!};
-            openStart();
-        </script>
+        <p>Количество людей {{ session()->get('person') + 1 }}</p>
     @endif
+</div>
+<div class="face_control" id="face_control">
+
 </div>
 <div class="music" id="music">
 
 </div>
+<p>БАР</p>
 <div class="bar" id="bar">
 
 </div>
+<p>ТАНЦПОЛ</p>
 <div class="dance" id="dance">
 
 </div>
@@ -50,5 +50,10 @@
     <a href="{{ route('exit') }}">Выйти</a>
     <a href="{{ route('exit_and_delete') }}">Выйти и удалить список посетителей</a>
 </div>
+<script>
+    tracks = {!! json_encode($tracks) !!};
+    persons = {!! json_encode($persons) !!};
+    openStart();
+</script>
 </body>
 </html>

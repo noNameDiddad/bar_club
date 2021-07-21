@@ -9,12 +9,7 @@ class Music extends Model
 {
     use HasFactory;
 
-    public $fillable = ['music'];
+    public $fillable = ['track'];
 
     public $timestamps = false;
-
-    public function people()
-    {
-        return $this->hasMany(Person::class);
-    }
 }

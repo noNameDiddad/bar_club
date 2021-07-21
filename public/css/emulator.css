@@ -21,7 +21,18 @@ body {
     display: none;
 }
 
+.play {
+    display: none;
+}
+
 .bar {
     color: white;
 }
 
+.count {
+    color: white;
+}
+
+.exit {
+    color: white;
+}

@@ -31,5 +31,21 @@
 <div class="bufer" id="bufer">
 
 </div>
+<div class="count">
+    @if(session()->get('person') == null)
+    <form action="{{ route('getPersons') }}">
+        <p>Введите количество людей</p>
+        <input type="text" name="count">
+        <button type="submit"> Подтвердить </button>
+    </form>
+    @else
+        <p>Количество людей {{ session()->get('person') }}</p>
+    @endif
+</div>
+
+<div class="exit" id="exit">
+    <a href="{{ route('exit') }}">Выйти</a>
+    <a href="{{ route('exit_and_delete') }}">Выйти и удалить список посетителей</a>
+</div>
 </body>
 </html>

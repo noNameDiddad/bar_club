@@ -105,5 +105,57 @@ body {
     font-family: 'VT323', monospace;
 }
 
+.count {
+    position: absolute;
+    left: 43%;
+    width: 14%;
+    top: 30%;
+    z-index: 20;
+    background: #718096;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+}
+
+.count p {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    text-align: center;
+}
+
+.count input {
+    font-family: 'VT323', monospace;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 5px;
+    background: none;
+    color: #cbd5e0;
+    font-size: 15px;
+    margin: 20px auto;
+    width: 94%;
+}
+
+.count button {
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 5px;
+    background: none;
+    color: #cbd5e0;
+    font-size: 15px;
+    margin: 0 auto;
+    height: 29px;
+    width: 100%;
+}
+
+.count_person {
+    position: absolute;
+    right: 43%;
+    bottom: 50px;
+    width: 14%;
+    background: #718096;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    font-family: 'VT323', monospace;
+}
 
 

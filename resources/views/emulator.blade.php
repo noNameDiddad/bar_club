@@ -23,36 +23,36 @@
          alt="">
 </div>
 
-<div class="count">
-    @if(session()->get('person') == null)
+@if(session()->get('person') == null)
+    <div class="count">
         <form action="{{ route('getPersons') }}">
             <p>Введите количество людей</p>
             <input type="text" name="count">
             <button type="submit"> Подтвердить</button>
         </form>
-    @else
-        <p>Количество людей {{ session()->get('person') + 1 }}</p>
-    @endif
-</div>
+    </div>
+@else
+    <div class="count_person">
+        <p class="">Количество людей {{ session()->get('person') + 1 }}</p>
+    </div>
+@endif
+
 <div class="club">
     <div class="all_without_music">
         <div class="upper_face_control">
             <p class="place">Entrance</p>
             <div class="face_control value" id="face_control">
-
             </div>
         </div>
         <div class="bar_with_dance">
             <div class="upper_bar">
                 <p class="place">Bar</p>
                 <div class="bar value" id="bar">
-
                 </div>
             </div>
             <div class="upper_dance">
                 <p class="place">Dance place</p>
                 <div class="dance value" id="dance">
-
                 </div>
             </div>
         </div>
@@ -60,7 +60,6 @@
     <div class="upper_music">
         <p class="place">Nickelodeon</p>
         <div class="music value" id="music">
-
         </div>
     </div>
 </div>

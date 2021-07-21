@@ -25,14 +25,21 @@ body {
     display: none;
 }
 
-.bar {
-    color: white;
-}
-
 .count {
-    color: white;
+    color: #4a5568;
+}
+.music {
+    color: #4a5568;
+}
+.bar {
+    color: #4a5568;
+}
+.dance {
+    color: #4a5568;
+}
+.exit {
+    color: #4a5568;
 }
 
-.exit {
-    color: white;
-}
+
+

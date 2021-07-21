@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <script src="{{ asset("js/script.js") }}"></script>
-    <script>
-        getData();
-    </script>
+
     <title>Bar Club</title>
 </head>
 <body>
@@ -22,15 +20,7 @@
     <img class="control-button play" id="play_btn" onclick="startEmulation()" src="{{ asset('images/play_btn.png') }}" alt="">
     <img class="control-button pause" id="pause_btn" onclick="stopEmulation()" src="{{ asset('images/pause_btn.png') }}" alt="">
 </div>
-<div class="bar" id="bar">
 
-</div>
-<div class="dance" id="dance">
-
-</div>
-<div class="bufer" id="bufer">
-
-</div>
 <div class="count">
     @if(session()->get('person') == null)
     <form action="{{ route('getPersons') }}">
@@ -40,9 +30,22 @@
     </form>
     @else
         <p>Количество людей {{ session()->get('person') }}</p>
+        <script>
+            tracks = {!! json_encode($tracks) !!};
+            persons = {!! json_encode($persons) !!};
+            openStart();
+        </script>
     @endif
 </div>
+<div class="music" id="music">
 
+</div>
+<div class="bar" id="bar">
+
+</div>
+<div class="dance" id="dance">
+
+</div>
 <div class="exit" id="exit">
     <a href="{{ route('exit') }}">Выйти</a>
     <a href="{{ route('exit_and_delete') }}">Выйти и удалить список посетителей</a>

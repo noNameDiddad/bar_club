@@ -81,7 +81,15 @@
     </div>
 </div>
 <div class="explanation block-setting">
-
+    <div class="header">
+        <h1>explanation</h1>
+    </div>
+    <div class="output">
+        <p>Add data for correct operation of the emulator. Data is added by pressing the + button and deleted by pressing the - button.</p>
+    </div>
+    <div class="exit">
+        <a href="/">TO MAIN MENU</a>
+    </div>
 </div>
 </body>
 </html>

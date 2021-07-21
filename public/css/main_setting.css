@@ -65,3 +65,15 @@ body {
     font-size: 20px;
     width: 270px;
 }
+
+.block-setting .exit {
+    width: 100%;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.block-setting .exit a {
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: #cbd5e0;
+}

@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FirstNameController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\LastNameController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +19,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('main_page');
+})->name('main_page');
+
+Route::get('/settings', [GeneralController::class, 'outputSettings'])->name('open_settings');
+Route::get('/emulator', [GeneralController::class, 'startEmulator'])->name('open_emulator');
+Route::get('/exit', [GeneralController::class, 'exit'])->name('exit');
+Route::get('/exit_and_delete', [GeneralController::class, 'exit_and_delete'])->name('exit_and_delete');
+Route::post('/get_data', [GeneralController::class, 'getData']);
+Route::get('/get_person', [GeneralController::class, 'getPersons'])->name('getPersons');
+
+Route::resource('/firstname', FirstNameController::class);
+Route::resource('/lastname', LastNameController::class);
+Route::resource('/music', MusicController::class);
+Route::resource('/person', PersonController::class);

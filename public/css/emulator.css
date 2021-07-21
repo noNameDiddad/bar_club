@@ -3,10 +3,6 @@
     margin: 0;
 }
 
-p {
-    color: white;
-}
-
 body {
     background: #000;
     width: 100%;
@@ -16,7 +12,7 @@ body {
 .control-button {
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    left: 75px;
     width: 100px;
     height: 100px;
 }
@@ -29,24 +25,137 @@ body {
     display: none;
 }
 
-.count {
-    color: #4a5568;
-}
-.music {
-    color: #4a5568;
-}
-.bar {
-    color: #4a5568;
-}
-.dance {
-    color: #4a5568;
-}
-.face_control {
-    color: #4a5568;
-}
 .exit {
-    color: #4a5568;
+    position: absolute;
+    bottom: 10px;
+    right: 75px;
 }
 
+.exit a {
+    display: block;
+    color: #718096;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 10px;
+    width: 400px;
+    text-decoration: none;
+}
+
+.club {
+    color: #4a5568;
+    border: 1px solid white;
+    width: 90%;
+    margin: 0 auto;
+    height: 80%;
+}
+
+.place  {
+    color: #718096;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+}
+
+.value {
+    padding-left: 10px;
+}
+
+.all_without_music {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    position: relative;
+}
+
+.bar_with_dance {
+    width: 98%;
+    position: relative;
+}
+
+.upper_face_control, .upper_music, .upper_bar, .upper_dance {
+    border: 1px solid white;
+    position: relative;
+
+}
+
+.upper_face_control {
+    top: 10px;
+    left: 10px;
+    width: 30%;
+    height: 90%;
+}
+.upper_music {
+    width: 98%;
+    height: 18%;
+    left: 1%;
+    right: 1%;
+}
+.upper_bar {
+    width: 96%;
+    height: 50%;
+    top: 2%;
+    left: 2%;
+}
+.upper_dance {
+    width: 96%;
+    height: 40%;
+    top: 2%;
+    left: 2%;
+}
+
+.face_control, .music, .bar, .dance {
+    font-family: 'VT323', monospace;
+}
+
+.count {
+    position: absolute;
+    left: 43%;
+    width: 14%;
+    top: 30%;
+    z-index: 20;
+    background: #718096;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+}
+
+.count p {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    text-align: center;
+}
+
+.count input {
+    font-family: 'VT323', monospace;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 5px;
+    background: none;
+    color: #cbd5e0;
+    font-size: 15px;
+    margin: 20px auto;
+    width: 94%;
+}
+
+.count button {
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 5px;
+    background: none;
+    color: #cbd5e0;
+    font-size: 15px;
+    margin: 0 auto;
+    height: 29px;
+    width: 100%;
+}
+
+.count_person {
+    position: absolute;
+    right: 43%;
+    bottom: 50px;
+    width: 14%;
+    background: #718096;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    font-family: 'VT323', monospace;
+}
 
 

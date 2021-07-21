@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FirstName;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FirstNameController extends Controller
 {
@@ -35,7 +36,20 @@ class FirstNameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back();
+        }
+
+        $first_name = new FirstName();
+        $first_name->first_name = $request->first_name;
+
+        $first_name->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +92,10 @@ class FirstNameController extends Controller
      * @param  \App\Models\FirstName  $firstName
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FirstName $firstName)
+    public function destroy(FirstName $firstname)
     {
-        //
+        if($firstname->delete()) {
+            return redirect()->back();
+        }
     }
 }

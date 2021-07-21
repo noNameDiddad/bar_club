@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LastName;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LastNameController extends Controller
 {
@@ -35,7 +36,20 @@ class LastNameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'last_name' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back();
+        }
+
+        $last_name = new LastName();
+        $last_name->last_name = $request->last_name;
+
+        $last_name->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +92,10 @@ class LastNameController extends Controller
      * @param  \App\Models\LastName  $lastName
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LastName $lastName)
+    public function destroy(LastName $lastname)
     {
-        //
+        if($lastname->delete()) {
+            return redirect()->back();
+        }
     }
 }

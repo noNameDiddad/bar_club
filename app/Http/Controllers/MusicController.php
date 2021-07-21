@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Music;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MusicController extends Controller
 {
@@ -35,7 +36,20 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'track' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back();
+        }
+
+        $music = new Music();
+        $music->track = $request->track;
+
+        $music->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +94,8 @@ class MusicController extends Controller
      */
     public function destroy(Music $music)
     {
-        //
+        if($music->delete()) {
+            return redirect()->back();
+        }
     }
 }

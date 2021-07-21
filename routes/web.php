@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FirstNameController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\LastNameController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main_page');
 });
+
+Route::get('/settings', [GeneralController::class, 'outputSettings'])->name('open_settings');
+
+Route::resource('/firstname', FirstNameController::class);
+Route::resource('/lastname', LastNameController::class);
+Route::resource('/music', MusicController::class);
+Route::resource('/person', PersonController::class);

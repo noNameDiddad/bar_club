@@ -22,15 +22,10 @@ class GeneralController extends Controller
 
     public function startEmulator()
     {
-        return view('emulator')->with('status', 'none');
-    }
-
-    public function getData()
-    {
-        return response([
+        return view('emulator',[
             'tracks' => Music::all(),
             'persons' => Person::all()
-        ]);
+        ])->with('status', 'none');
     }
 
     public function getPersons(Request $request)
@@ -51,9 +46,9 @@ class GeneralController extends Controller
         for ($i = 0; $i <= $count; $i++) {
 
             $person = new Person();
-            $person->first_name_id = $first_names[$this->getRandom(count($first_names)-1)]->id ;
-            $person->last_name_id = $last_names[$this->getRandom(count($last_names)-1)]->id ;
-            $person->music_id = $tracks[$this->getRandom(count($tracks)-1)]->id;
+            $person->first_name = $first_names[$this->getRandom(count($first_names)-1)]->first_name ;
+            $person->last_name = $last_names[$this->getRandom(count($last_names)-1)]->last_name ;
+            $person->music = $tracks[$this->getRandom(count($tracks)-1)]->track;
 
             $person->save();
         }

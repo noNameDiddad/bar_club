@@ -12,9 +12,4 @@ class FirstName extends Model
     public $fillable = ['first_name'];
 
     public $timestamps = false;
-
-    public function people()
-    {
-        return $this->hasMany(Person::class);
-    }
 }

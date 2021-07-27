@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\FirstNameController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LastNameController;
-use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +29,9 @@ Route::get('/exit_and_delete', [GeneralController::class, 'exit_and_delete'])->n
 Route::post('/get_data', [GeneralController::class, 'getData']);
 Route::get('/get_person', [GeneralController::class, 'getPersons'])->name('getPersons');
 
+
+
 Route::resource('/firstname', FirstNameController::class);
 Route::resource('/lastname', LastNameController::class);
-Route::resource('/music', MusicController::class);
+Route::resource('/genre', GenreController::class);
 Route::resource('/person', PersonController::class);

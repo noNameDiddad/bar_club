@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FirstName;
 use App\Models\LastName;
-use App\Models\Music;
+use App\Models\Genre;
 use App\Models\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,14 +16,14 @@ class GeneralController extends Controller
         return view('settings.main_setting', [
             'first_names' => FirstName::all(),
             'last_names' => LastName::all(),
-            'tracks' => Music::all()
+            'genres' => Genre::all()
         ]);
     }
 
     public function startEmulator()
     {
         return view('emulator',[
-            'tracks' => Music::all(),
+            'genres' => Genre::all(),
             'persons' => Person::all()
         ]);
     }
@@ -40,7 +40,7 @@ class GeneralController extends Controller
 
         $first_names = FirstName::all();
         $last_names = LastName::all();
-        $tracks = Music::all();
+        $genres = Genre::all();
 
         $count = $request->count;
         for ($i = 0; $i < $count; $i++) {
@@ -48,7 +48,7 @@ class GeneralController extends Controller
             $person = new Person();
             $person->first_name = $first_names[$this->getRandom(count($first_names)-1)]->first_name ;
             $person->last_name = $last_names[$this->getRandom(count($last_names)-1)]->last_name ;
-            $person->music = $tracks[$this->getRandom(count($tracks)-1)]->track;
+            $person->music = $genres[$this->getRandom(count($genres)-1)]->genre;
 
             $person->save();
         }

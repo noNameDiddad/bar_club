@@ -60,21 +60,21 @@
 </div>
 <div class="tracks block-setting">
     <div class="header">
-        <h1>tracks</h1>
+        <h1>genres</h1>
         <div class="form">
-            <form action="{{ route('music.store') }}" method="post">
+            <form action="{{ route('genre.store') }}" method="post">
                 @csrf
-                <input type="text" name="track" id="">
+                <input type="text" name="genre" id="">
                 <button>+</button>
             </form>
         </div>
     </div>
     <div class="output">
-        @foreach($tracks as $track)
-            <form action="{{ route('music.destroy', $track->id) }}" method="post">
+        @foreach($genres as $genre)
+            <form action="{{ route('genre.destroy', $genre->id) }}" method="post">
                 @csrf
                 @method('delete')
-                <p class="outputed">{{ $track->track }}</p>
+                <p class="outputed">{{ $genre->genre }}</p>
                 <button>-</button>
             </form>
         @endforeach

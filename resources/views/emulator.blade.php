@@ -33,7 +33,7 @@
     </div>
 @else
     <div class="count_person">
-        <p class="">Количество людей {{ session()->get('person') + 1 }}</p>
+        <p class="">Количество людей {{ count($persons) }}</p>
     </div>
 @endif
 

@@ -31,7 +31,7 @@ class GeneralController extends Controller
     public function getPersons(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'count' => 'required|digits_between:0,15',
+            'count' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -43,7 +43,7 @@ class GeneralController extends Controller
         $tracks = Music::all();
 
         $count = $request->count;
-        for ($i = 0; $i <= $count; $i++) {
+        for ($i = 0; $i < $count; $i++) {
 
             $person = new Person();
             $person->first_name = $first_names[$this->getRandom(count($first_names)-1)]->first_name ;

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FavoriteGenre;
 use App\Models\FirstName;
 use App\Models\LastName;
 use App\Models\Genre;
 use App\Models\Person;
+use App\Models\ReadyPerson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 

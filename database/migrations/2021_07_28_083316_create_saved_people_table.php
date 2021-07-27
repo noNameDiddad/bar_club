@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmulatorsTable extends Migration
+class CreateSavedPeopleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateEmulatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('emulators', function (Blueprint $table) {
+        Schema::create('saved_people', function (Blueprint $table) {
             $table->id();
-            $table->string('person');
-            $table->integer('hours');
-            $table->string('status');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ class CreateEmulatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emulators');
+        Schema::dropIfExists('saved_people');
     }
 }

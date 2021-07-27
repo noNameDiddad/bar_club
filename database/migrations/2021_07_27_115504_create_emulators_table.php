@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMusicTable extends Migration
+class CreateEmulatorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateMusicTable extends Migration
      */
     public function up()
     {
-        Schema::create('music', function (Blueprint $table) {
+        Schema::create('emulators', function (Blueprint $table) {
             $table->id();
-            $table->string('track');
+            $table->string('person');
+            $table->foreignId('id_genre')->constrained('favorite_genres')->onDelete('cascade');
+            $table->integer('hours');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateMusicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('music');
+        Schema::dropIfExists('emulators');
     }
 }

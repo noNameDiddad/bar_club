@@ -25,7 +25,7 @@ class GeneralController extends Controller
         return view('emulator',[
             'tracks' => Music::all(),
             'persons' => Person::all()
-        ])->with('status', 'none');
+        ]);
     }
 
     public function getPersons(Request $request)
@@ -52,7 +52,6 @@ class GeneralController extends Controller
 
             $person->save();
         }
-        session()->put('person', $count);
         return redirect()->back();
     }
 

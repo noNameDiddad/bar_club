@@ -18,7 +18,7 @@
 <body>
 <div class="first_names block-setting">
     <div class="header">
-        <h1>first_names</h1>
+        <h1>имя</h1>
         <div class="form">
             <form action="{{ route('firstname.store') }}" method="POST">
                 @csrf
@@ -40,7 +40,7 @@
 </div>
 <div class="last_names block-setting">
     <div class="header">
-        <h1>last_names</h1>
+        <h1>фамилия</h1>
         <div class="form">
             <form action="{{ route('lastname.store') }}" method="post">
                 @csrf
@@ -62,7 +62,7 @@
 </div>
 <div class="tracks block-setting">
     <div class="header">
-        <h1>genres</h1>
+        <h1>жанр</h1>
         <div class="form">
             <form action="{{ route('genre.store') }}" method="post">
                 @csrf
@@ -84,13 +84,13 @@
 </div>
 <div class="explanation block-setting">
     <div class="header">
-        <h1>explanation</h1>
+        <h1>описание</h1>
     </div>
     <div class="output">
-        <p>Add data for correct operation of the emulator. Data is added by pressing the + button and deleted by pressing the - button.</p>
+        <p>Добавьте данные для корректной работы эмулятора. Данные добавляются нажатием кнопки + и удаляются нажатием кнопки -.</p>
     </div>
     <div class="exit">
-        <a href="/">TO MAIN MENU</a>
+        <a href="{{ route('to_main_menu') }}">В ГЛАВНОЕ МЕНЮ</a>
     </div>
 </div>
 </body>

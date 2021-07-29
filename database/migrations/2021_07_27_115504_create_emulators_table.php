@@ -16,7 +16,6 @@ class CreateEmulatorsTable extends Migration
         Schema::create('emulators', function (Blueprint $table) {
             $table->id();
             $table->integer('id_person');
-            $table->string('person');
             $table->string('status');
             $table->integer('hours');
         });

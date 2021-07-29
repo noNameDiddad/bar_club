@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('/css/emulator.css') }}">
 
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <script src="{{ asset("js/script.js") }}"></script>

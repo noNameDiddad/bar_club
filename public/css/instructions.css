@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #000;
+}
+
+.block-instruction {
+    width: 600px;
+    padding: 20px;
+    background: #cbd5e0;
+    margin: 100px auto 0;
+}
+
+.block-instruction > h1 {
+    color: #4a5568;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.block-instruction > p {
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 20px;
+    margin: 40px 0 40px 0;
+}
+
+.rights {
+    margin: 30px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.block-instruction > a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+    display: block;
+    color: #4a5568;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}

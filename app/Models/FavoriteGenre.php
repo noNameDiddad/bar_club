@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class FavoriteGenre extends Model
 {
     use HasFactory;
 
-    public $fillable = ['genre'];
+    public $fillable = ['id_person','id_genre'];
 
     public $timestamps = false;
 }

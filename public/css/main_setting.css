@@ -15,10 +15,15 @@ body {
     border: 3px solid #cbd5e0;
     border-radius: 5px;
     color: #cbd5e0;
-    font-family: 'VT323', monospace;
+}
+
+.block-setting p {
+    font-family: 'DotGothic16', sans-serif;
 }
 
 .block-setting h1 {
+    margin-top: 5px;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
 
@@ -41,7 +46,7 @@ body {
 }
 
 .block-setting form > input {
-    font-family: 'VT323', monospace;
+    font-family: 'DotGothic16', sans-serif;
     border: 2px solid #cbd5e0;
     border-radius: 5px;
     padding: 5px;

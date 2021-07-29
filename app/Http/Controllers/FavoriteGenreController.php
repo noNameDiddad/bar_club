@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Music;
+use App\Models\FavoriteGenre;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class MusicController extends Controller
+class FavoriteGenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,29 +35,16 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'track' => 'required',
-        ]);
-
-        if($validator->fails()){
-            return redirect()->back();
-        }
-
-        $music = new Music();
-        $music->track = $request->track;
-
-        $music->save();
-
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Music  $music
+     * @param  \App\Models\FavoriteGenre  $favoriteGenre
      * @return \Illuminate\Http\Response
      */
-    public function show(Music $music)
+    public function show(FavoriteGenre $favoriteGenre)
     {
         //
     }
@@ -66,10 +52,10 @@ class MusicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Music  $music
+     * @param  \App\Models\FavoriteGenre  $favoriteGenre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Music $music)
+    public function edit(FavoriteGenre $favoriteGenre)
     {
         //
     }
@@ -78,10 +64,10 @@ class MusicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Music  $music
+     * @param  \App\Models\FavoriteGenre  $favoriteGenre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Music $music)
+    public function update(Request $request, FavoriteGenre $favoriteGenre)
     {
         //
     }
@@ -89,13 +75,11 @@ class MusicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Music  $music
+     * @param  \App\Models\FavoriteGenre  $favoriteGenre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Music $music)
+    public function destroy(FavoriteGenre $favoriteGenre)
     {
-        if($music->delete()) {
-            return redirect()->back();
-        }
+        //
     }
 }

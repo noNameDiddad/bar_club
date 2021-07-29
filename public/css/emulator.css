@@ -70,10 +70,27 @@ body {
     position: relative;
 }
 
+.scrollable {
+    overflow-y: auto;
+    height: 80%;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 8px;
+    background-color: white;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #8f8f8f;
+}
+
+.scrollable::-webkit-scrollbar-button {
+    background: #cbd5e0;
+}
+
 .upper_face_control, .upper_music, .upper_bar, .upper_dance {
     border: 1px solid white;
     position: relative;
-
 }
 
 .upper_face_control {
@@ -81,6 +98,23 @@ body {
     left: 10px;
     width: 30%;
     height: 90%;
+}
+.upper_face_control .person {
+    position: relative;
+}
+
+.upper_face_control .person_data {
+    position: absolute;
+    background: #000;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.person:hover .person_data {
+    display: block;
 }
 .upper_music {
     width: 98%;

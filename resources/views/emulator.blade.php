@@ -16,24 +16,20 @@
     <title>Bar Club</title>
 </head>
 <body>
-<div class="play-buttons">
-    <img class="control-button play" id="play_btn" onclick="startEmulation()" src="{{ asset('images/play_btn.png') }}"
-         alt="">
-    <img class="control-button pause" id="pause_btn" onclick="stopEmulation()" src="{{ asset('images/pause_btn.png') }}"
-         alt="">
-</div>
 
-@if(session()->get('person') == null)
+
+@if(session()->get('limit') == null)
     <div class="count">
-        <form action="{{ route('getPersons') }}">
-            <p>Введите количество людей</p>
-            <input type="text" name="count">
+        <form action="{{ route('set_limit') }}" method="get">
+            @csrf
+            <p>Введите количество мест в клубе</p>
+            <input type="text" name="limit">
             <button type="submit"> Подтвердить</button>
         </form>
     </div>
 @else
     <div class="count_person">
-        <p class="">Количество людей {{ count($persons) }}</p>
+        <p class="">Количество мест в клубе {{ session()->get('limit') }}</p>
     </div>
 @endif
 
@@ -41,37 +37,152 @@
     <div class="all_without_music">
         <div class="upper_face_control">
             <p class="place">Entrance</p>
-            <div class="face_control value" id="face_control">
+            <div class="scrollable face_control value">
+                @if(count($emulator) == 0)
+                    @foreach($persons as $person)
+                        <div class="person">
+                            <p>{{ $person->first_name." ".$person->last_name}}</p>
+                            <div class="person_data">
+                                <p>Любимые жанры:
+                                    @foreach ($person->favorite_genres as $genre)
+                                        {{ $genre }}
+                                    @endforeach
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    @foreach($emulator as $emulation)
+                        @if($emulation->status == "entrance")
+                            @foreach($persons as $person)
+                                @if($emulation->id_person == $person->id)
+                                    <div class="person">
+                                        <p>{{ $person->first_name." ".$person->last_name}}</p>
+                                        <div class="person_data">
+                                            <p>Любимые жанры:
+                                                @foreach ($person->favorite_genres as $genre)
+                                                    {{ $genre }}
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="bar_with_dance">
             <div class="upper_bar">
                 <p class="place">Bar</p>
-                <div class="bar value" id="bar">
+                <div class="scrollable bar value">
+                    @foreach($emulator as $emulation)
+                        @if($emulation->status == "bar")
+                            @foreach($persons as $person)
+                                @if($emulation->id_person == $person->id)
+                                    <div class="person">
+                                        <p>{{ $person->first_name." ".$person->last_name}}</p>
+                                        <div class="person_data">
+                                            <p>Любимые жанры:
+                                                @foreach ($person->favorite_genres as $genre)
+                                                    {{ $genre }}
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <div class="upper_dance">
                 <p class="place">Dance place</p>
-                <div class="dance value" id="dance">
+                <div class="scrollable dance value">
+                    @foreach($emulator as $emulation)
+                        @if($emulation->status == "dance")
+                            @foreach($persons as $person)
+                                @if($emulation->id_person == $person->id)
+                                    <div class="person">
+                                        <p>{{ $person->first_name." ".$person->last_name}}</p>
+                                        <div class="person_data">
+                                            <p>Любимые жанры:
+                                                @foreach ($person->favorite_genres as $genre)
+                                                    {{ $genre }}
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
+                    @endforeach
                 </div>
+            </div>
+        </div>
+        <div class="upper_exiting">
+            <p class="place">Exit</p>
+            <div class="scrollable exiting value">
+                @foreach($emulator as $emulation)
+                    @if($emulation->status == "on_exit")
+                        @foreach($persons as $person)
+                            @if($emulation->id_person == $person->id)
+                                <div class="person">
+                                    <p>{{ $person->first_name." ".$person->last_name}}</p>
+                                    <div class="person_data">
+                                        <p>Любимые жанры:
+                                            @foreach ($person->favorite_genres as $genre)
+                                                {{ $genre }}
+                                            @endforeach
+                                        </p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
     <div class="upper_music">
-        <p class="place">Nickelodeon</p>
-        <div class="music value" id="music">
+        <div class="nickelodion">
+            <p class="place">Nickelodeon</p>
+            <div class="music value">
+                @if(session()->get('genre_now'))
+                    <form action="{{ route('next_step') }}" method="get" class="genre_form">
+                        @csrf
+                        <p class="inline">Текущий жанр:</p>
+                        <select name="genre">
+                            @foreach($genres as $genre)
+                                @if( $genre_now == $genre->genre)
+                                    <option selected value="{{$genre->genre}}">{{$genre->genre}}</option>
+                                @else
+                                    <option value="{{$genre->genre}}">{{$genre->genre}}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                        <div class="form-step-button">
+                            @if(session()->get('action') == 'step')
+                                <button type="submit">Следующий ход</button>
+                            @endif
+                        </div>
+                    </form>
+
+                @endif
+                <div class="start-button">
+                    @if(session()->get('action') == 'start')
+                        <a href="{{'start'}}">Старт</a>
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="exit" id="exit">
+<div class="exit">
     <a href="{{ route('exit') }}">Выйти</a>
     <a href="{{ route('exit_and_delete') }}">Выйти и удалить список посетителей</a>
 </div>
-<script>
-    tracks = {!! json_encode($tracks) !!};
-    persons = {!! json_encode($persons) !!};
-    openStart();
-</script>
 </body>
 </html>

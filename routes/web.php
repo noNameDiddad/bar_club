@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmulateController;
 use App\Http\Controllers\FirstNameController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\GenreController;
@@ -18,16 +19,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main_page');
-})->name('main_page');
+Route::get('/', [GeneralController::class, 'mainPage'])->name('main_page');
+Route::get('/instructions', [GeneralController::class, 'getInstructions'])->name('instructions');
+
 
 Route::get('/settings', [GeneralController::class, 'outputSettings'])->name('open_settings');
-Route::get('/emulator', [GeneralController::class, 'startEmulator'])->name('open_emulator');
+Route::get('/to_main_menu', [GeneralController::class, 'toMainMenu'])->name('to_main_menu');
+
 Route::get('/exit', [GeneralController::class, 'exit'])->name('exit');
 Route::get('/exit_and_delete', [GeneralController::class, 'exit_and_delete'])->name('exit_and_delete');
-Route::post('/get_data', [GeneralController::class, 'getData']);
-Route::get('/get_person', [GeneralController::class, 'getPersons'])->name('getPersons');
+
+Route::get('/start', [EmulateController::class, 'start'])->name('start');
+Route::get('/next_step', [EmulateController::class, 'nextStep'])->name('next_step');
+Route::get('/set_limit', [EmulateController::class, 'setLimit'])->name('set_limit');
+Route::get('/emulator', [EmulateController::class, 'actionEmulator'])->name('action_emulator');
+
+
+
+Route::get('/test', [GeneralController::class, 'test'])->name('test');
 
 
 

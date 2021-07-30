@@ -15,7 +15,7 @@
 
     <title>Bar Club</title>
 </head>
-<body>
+<body class="background">
 
 
 @if(session()->get('limit') == null)
@@ -36,7 +36,7 @@
 <div class="club">
     <div class="all_without_music">
         <div class="upper_face_control">
-            <p class="place">Entrance</p>
+            <p class="place">Вход</p>
             <div class="scrollable face_control value">
                 @if(count($emulator) == 0)
                     @foreach($persons as $person)
@@ -75,7 +75,7 @@
         </div>
         <div class="bar_with_dance">
             <div class="upper_bar">
-                <p class="place">Bar</p>
+                <p class="place">Бар</p>
                 <div class="scrollable bar value">
                     @foreach($emulator as $emulation)
                         @if($emulation->status == "bar")
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="upper_dance">
-                <p class="place">Dance place</p>
+                <p class="place">Танцпол</p>
                 <div class="scrollable dance value">
                     @foreach($emulator as $emulation)
                         @if($emulation->status == "dance")
@@ -122,7 +122,7 @@
             </div>
         </div>
         <div class="upper_exiting">
-            <p class="place">Exit</p>
+            <p class="place">Выход</p>
             <div class="scrollable exiting value">
                 @foreach($emulator as $emulation)
                     @if($emulation->status == "on_exit")
@@ -147,7 +147,7 @@
     </div>
     <div class="upper_music">
         <div class="nickelodion">
-            <p class="place">Nickelodeon</p>
+            <p class="place">Музыкальный аппарат</p>
             <div class="music value">
                 @if(session()->get('genre_now'))
                     <form action="{{ route('next_step') }}" method="get" class="genre_form">

@@ -8,6 +8,11 @@ body {
     display: flex;
 }
 
+.background {
+    background: url("../images/background_bar.gif") no-repeat center center fixed;
+    background-size: cover;
+}
+
 .block-setting {
     margin: 1%;
     width: 24%;
@@ -15,6 +20,7 @@ body {
     border: 3px solid #cbd5e0;
     border-radius: 5px;
     color: #cbd5e0;
+    background: #000;
 }
 
 .block-setting p {

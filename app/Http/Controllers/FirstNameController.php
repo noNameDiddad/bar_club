@@ -36,6 +36,7 @@ class FirstNameController extends Controller
      */
     public function store(Request $request)
     {
+        session()->put('changed','1');
         $validator = Validator::make($request->all(), [
             'first_name' => 'required',
         ]);
@@ -94,6 +95,7 @@ class FirstNameController extends Controller
      */
     public function destroy(FirstName $firstname)
     {
+        session()->put('changed','1');
         if($firstname->delete()) {
             return redirect()->back();
         }

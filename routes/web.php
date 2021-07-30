@@ -21,11 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GeneralController::class, 'mainPage'])->name('main_page');
 Route::get('/instructions', [GeneralController::class, 'getInstructions'])->name('instructions');
-
-
 Route::get('/settings', [GeneralController::class, 'outputSettings'])->name('open_settings');
 Route::get('/to_main_menu', [GeneralController::class, 'toMainMenu'])->name('to_main_menu');
-
 Route::get('/exit', [GeneralController::class, 'exit'])->name('exit');
 Route::get('/exit_and_delete', [GeneralController::class, 'exit_and_delete'])->name('exit_and_delete');
 
@@ -33,12 +30,6 @@ Route::get('/start', [EmulateController::class, 'start'])->name('start');
 Route::get('/next_step', [EmulateController::class, 'nextStep'])->name('next_step');
 Route::get('/set_limit', [EmulateController::class, 'setLimit'])->name('set_limit');
 Route::get('/emulator', [EmulateController::class, 'actionEmulator'])->name('action_emulator');
-
-
-
-Route::get('/test', [GeneralController::class, 'test'])->name('test');
-
-
 
 Route::resource('/firstname', FirstNameController::class);
 Route::resource('/lastname', LastNameController::class);

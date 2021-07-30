@@ -5,6 +5,12 @@
 
 body {
     background: #000;
+    padding-bottom: 100px;
+}
+
+.background {
+    background: url("../images/background_bar.gif") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .block-instruction {

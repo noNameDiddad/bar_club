@@ -12,7 +12,7 @@
 
     <title>Главное меню</title>
 </head>
-<body>
+<body class="background">
 <div class="block-menu">
     @if(count($first_names) < 5 || count($last_names) < 5 || count($genres) < 3)
         <a href="{{ route('instructions') }}"><p>ИНСТРУКЦИЯ</p></a>

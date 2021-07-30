@@ -84,11 +84,4 @@ class GeneralController extends Controller
         }
         return redirect()->route('main_page');
     }
-
-    public function test()
-    {
-        echo FavoriteGenre::where('id_person', 15)->get();
-        dd(session()->all());
-
-    }
 }

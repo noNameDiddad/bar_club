@@ -15,7 +15,7 @@
 
     <title>Setting</title>
 </head>
-<body>
+<body class="background">
 <div class="first_names block-setting">
     <div class="header">
         <h1>имя</h1>

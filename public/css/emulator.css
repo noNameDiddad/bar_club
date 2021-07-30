@@ -22,6 +22,11 @@ body {
     height: 100vh;
 }
 
+.background {
+    background: url("../images/background_bar.gif") no-repeat center center fixed;
+    background-size: cover;
+}
+
 .step-button {
     position: absolute;
     bottom: 10px;
@@ -68,6 +73,7 @@ body {
     width: 90%;
     margin: 0 auto;
     height: 85%;
+    background: #000;
 }
 
 .place  {
@@ -179,7 +185,7 @@ body {
     color: #cbd5e0;
     font-size: 15px;
     margin: 20px auto;
-    width: 94%;
+    width: 100%;
 }
 
 .count button {

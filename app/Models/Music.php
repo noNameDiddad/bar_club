@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Emulator extends Model
+class Music extends Model
 {
     use HasFactory;
 
-    public $fillable = ['person','id_favorite_genre','hours'];
+    public $fillable = ['track'];
 
     public $timestamps = false;
 }

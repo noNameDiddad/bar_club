@@ -8,17 +8,15 @@
 
     <link rel="stylesheet" href="{{ asset('/css/main_setting.css') }}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <title>Setting</title>
 </head>
-<body class="background">
+<body>
 <div class="first_names block-setting">
     <div class="header">
-        <h1>имя</h1>
+        <h1>first_names</h1>
         <div class="form">
             <form action="{{ route('firstname.store') }}" method="POST">
                 @csrf
@@ -40,7 +38,7 @@
 </div>
 <div class="last_names block-setting">
     <div class="header">
-        <h1>фамилия</h1>
+        <h1>last_names</h1>
         <div class="form">
             <form action="{{ route('lastname.store') }}" method="post">
                 @csrf
@@ -62,21 +60,21 @@
 </div>
 <div class="tracks block-setting">
     <div class="header">
-        <h1>жанр</h1>
+        <h1>tracks</h1>
         <div class="form">
-            <form action="{{ route('genre.store') }}" method="post">
+            <form action="{{ route('music.store') }}" method="post">
                 @csrf
-                <input type="text" name="genre" id="">
+                <input type="text" name="track" id="">
                 <button>+</button>
             </form>
         </div>
     </div>
     <div class="output">
-        @foreach($genres as $genre)
-            <form action="{{ route('genre.destroy', $genre->id) }}" method="post">
+        @foreach($tracks as $track)
+            <form action="{{ route('music.destroy', $track->id) }}" method="post">
                 @csrf
                 @method('delete')
-                <p class="outputed">{{ $genre->genre }}</p>
+                <p class="outputed">{{ $track->track }}</p>
                 <button>-</button>
             </form>
         @endforeach
@@ -84,13 +82,13 @@
 </div>
 <div class="explanation block-setting">
     <div class="header">
-        <h1>описание</h1>
+        <h1>explanation</h1>
     </div>
     <div class="output">
-        <p>Добавьте данные для корректной работы эмулятора. Данные добавляются нажатием кнопки + и удаляются нажатием кнопки -.</p>
+        <p>Add data for correct operation of the emulator. Data is added by pressing the + button and deleted by pressing the - button.</p>
     </div>
     <div class="exit">
-        <a href="{{ route('to_main_menu') }}">В ГЛАВНОЕ МЕНЮ</a>
+        <a href="/">TO MAIN MENU</a>
     </div>
 </div>
 </body>

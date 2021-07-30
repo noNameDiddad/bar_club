@@ -36,7 +36,6 @@ class LastNameController extends Controller
      */
     public function store(Request $request)
     {
-        session()->put('changed','1');
         $validator = Validator::make($request->all(), [
             'last_name' => 'required',
         ]);
@@ -95,7 +94,6 @@ class LastNameController extends Controller
      */
     public function destroy(LastName $lastname)
     {
-        session()->put('changed','1');
         if($lastname->delete()) {
             return redirect()->back();
         }

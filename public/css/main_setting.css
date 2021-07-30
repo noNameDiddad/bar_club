@@ -8,11 +8,6 @@ body {
     display: flex;
 }
 
-.background {
-    background: url("../images/background_bar.gif") no-repeat center center fixed;
-    background-size: cover;
-}
-
 .block-setting {
     margin: 1%;
     width: 24%;
@@ -20,16 +15,10 @@ body {
     border: 3px solid #cbd5e0;
     border-radius: 5px;
     color: #cbd5e0;
-    background: #000;
-}
-
-.block-setting p {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'VT323', monospace;
 }
 
 .block-setting h1 {
-    margin-top: 5px;
-    font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
 
@@ -52,7 +41,7 @@ body {
 }
 
 .block-setting form > input {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'VT323', monospace;
     border: 2px solid #cbd5e0;
     border-radius: 5px;
     padding: 5px;

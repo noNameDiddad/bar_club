@@ -7,11 +7,6 @@ body {
     background: #000;
 }
 
-.background {
-    background: url("../images/background_bar.gif") no-repeat center center fixed;
-    background-size: cover;
-}
-
 .block-menu {
     width: 600px;
     padding: 20px;
@@ -38,5 +33,5 @@ body {
 .rights p {
     text-align: center;
     color: #cbd5e0;
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'VT323', monospace;
 }

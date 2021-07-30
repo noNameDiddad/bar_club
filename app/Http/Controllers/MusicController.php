@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genre;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Music;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class GenreController extends Controller
+class MusicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,17 +37,17 @@ class GenreController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'genre' => 'required',
+            'track' => 'required',
         ]);
 
         if($validator->fails()){
             return redirect()->back();
         }
 
-        $genre = new Genre();
-        $genre->genre = $request->genre;
+        $music = new Music();
+        $music->track = $request->track;
 
-        $genre->save();
+        $music->save();
 
         return redirect()->back();
     }
@@ -56,10 +55,10 @@ class GenreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Genre  $genre
+     * @param  \App\Models\Music  $music
      * @return \Illuminate\Http\Response
      */
-    public function show(Genre $genre)
+    public function show(Music $music)
     {
         //
     }
@@ -67,10 +66,10 @@ class GenreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Genre  $genre
+     * @param  \App\Models\Music  $music
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genre $genre)
+    public function edit(Music $music)
     {
         //
     }
@@ -79,10 +78,10 @@ class GenreController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Genre  $genre
+     * @param  \App\Models\Music  $music
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genre $genre)
+    public function update(Request $request, Music $music)
     {
         //
     }
@@ -90,12 +89,12 @@ class GenreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Genre  $genre
+     * @param  \App\Models\Music  $music
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genre $genre)
+    public function destroy(Music $music)
     {
-        if($genre->delete()) {
+        if($music->delete()) {
             return redirect()->back();
         }
     }
